@@ -123,11 +123,11 @@ def main(cfg):
 if __name__ == '__main__':
     cfg = parse_args()
     with open(os.path.join(cfg.save_result_dir, 'SOF-VSR-' + cfg.degradation + '.txt'), 'w+') as f:
-        f.write('OK', cfg.video_name)
+        f.write('OK ' + cfg.video_name)
     begin = time.time()
 
     main(cfg)
 
     end = time.time()
     with open(os.path.join(cfg.save_result_dir, 'SOF-VSR-' + cfg.degradation + '.txt'), 'w+') as f:
-        f.write('Full time on', cfg.video_name, ':', end - begin)
+        f.write('Full time on {}: {}'.format(cfg.video_name, end - begin))
