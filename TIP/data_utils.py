@@ -73,13 +73,15 @@ class TestsetLoader(Dataset):
         self.dataset_dir = cfg.testset_dir + '/' + video_name
         self.degradation = cfg.degradation
         self.scale = cfg.scale
-        self.frame_list = os.listdir(self.dataset_dir + '/lr_x' + str(self.scale) + '_' + self.degradation)
+        self.frame_list = os.listdir(self.dataset_dir)
+        #self.frame_list = os.listdir(self.dataset_dir + '/lr_x' + str(self.scale) + '_' + self.degradation)
 
     def __getitem__(self, idx):
-        dir = self.dataset_dir + '/lr_x' + str(self.scale) + '_' + self.degradation
-        LR0 = Image.open(dir + '/' + 'lr_' + str(idx+1).rjust(2, '0') + '.png')
-        LR1 = Image.open(dir + '/' + 'lr_' + str(idx+2).rjust(2, '0') + '.png')
-        LR2 = Image.open(dir + '/' + 'lr_' + str(idx+3).rjust(2, '0') + '.png')
+        #dir = self.dataset_dir + '/lr_x' + str(self.scale) + '_' + self.degradation
+        dir = self.dataset_dir
+        LR0 = Image.open(dir + '/' + 'frame_' + str(idx+1).rjust(3, '0') + '.png')
+        LR1 = Image.open(dir + '/' + 'frame_' + str(idx+2).rjust(3, '0') + '.png')
+        LR2 = Image.open(dir + '/' + 'frame_' + str(idx+3).rjust(3, '0') + '.png')
         W, H = LR1.size
 
         # H and W should be divisible by 2
