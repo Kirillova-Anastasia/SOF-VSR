@@ -70,16 +70,15 @@ def main(cfg):
     
     with torch.no_grad():
         #video_list = os.listdir(cfg.testset_dir)
-        
         #for idx_video in range(len(video_list)):
             #video_name = video_list[idx_video]
             #print(video_name)
 
-    # dataloader
-    test_set = TestsetLoader(cfg, cfg.video_name)
-    test_loader = DataLoader(test_set, num_workers=1, batch_size=1, shuffle=False)
+        # dataloader
+        test_set = TestsetLoader(cfg, cfg.video_name)
+        test_loader = DataLoader(test_set, num_workers=1, batch_size=1, shuffle=False)
 
-    for idx_iter, (LR_y_cube, SR_cb, SR_cr) in enumerate(test_loader):
+        for idx_iter, (LR_y_cube, SR_cb, SR_cr) in enumerate(test_loader):
         # data
         b, n_frames, h_lr, w_lr = LR_y_cube.size()
         LR_y_cube = Variable(LR_y_cube)
