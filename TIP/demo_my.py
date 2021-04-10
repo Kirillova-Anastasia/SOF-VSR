@@ -63,7 +63,7 @@ def chop_forward(x, model, scale, shave=16, min_size=5000, nGPUs=1):
 def main(cfg):
     # model
     net = SOFVSR(cfg, is_training=False)
-    ckpt = torch.load('/content/SOF-VSR/TIP/log/' + cfg.degradation + '_x' + str(cfg.scale) + '.pth')
+    ckpt = torch.load('TIP/log/' + cfg.degradation + '_x' + str(cfg.scale) + '.pth')
     net.load_state_dict(ckpt)
     if cfg.gpu_mode:
         net.cuda()
