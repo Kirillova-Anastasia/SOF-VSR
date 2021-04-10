@@ -114,9 +114,9 @@ def main(cfg):
                 os.mkdir(cfg.save_result_dir)
             if not os.path.exists(cfg.save_result_dir + cfg.degradation + '_x' + str(cfg.scale)):
                 os.mkdir(cfg.save_result_dir + cfg.degradation + '_x' + str(cfg.scale))
-            if not os.path.exists(cfg.save_result_dir + cfg.degradation + '_x' + str(cfg.scale) + '/' + video_name):
-                os.mkdir(cfg.save_result_dir + cfg.degradation + '_x' + str(cfg.scale) + '/' + video_name)
-            SR_rgb.save(cfg.save_result_dir + cfg.degradation + '_x' + str(cfg.scale) + '/' + video_name + '/frame_' + str(idx_iter+2).rjust(3,'0') + '.png')
+            if not os.path.exists(cfg.save_result_dir + cfg.degradation + '_x' + str(cfg.scale) + '/' + cfg.video_name):
+                os.mkdir(cfg.save_result_dir + cfg.degradation + '_x' + str(cfg.scale) + '/' + cfg.video_name)
+            SR_rgb.save(cfg.save_result_dir + cfg.degradation + '_x' + str(cfg.scale) + '/' + cfg.video_name + '/frame_' + str(idx_iter+2).rjust(3,'0') + '.png')
 
 
 if __name__ == '__main__':
