@@ -1,3 +1,7 @@
+# Running on your own dataset
+1) We used `pytorch/pytorch:0.4.1-cuda9-cudnn7-devel` docker. Directory with input images is mounted as `/dataset`, results will be saved in `/output`, directory with code is mounted as `/SOF-VSR`.
+2) Enter directory `/SOF-VSR`. See `SOF-VSR.sh` script for installation commands and running example.
+
 # SOF-VSR (Super-resolving Optical Flow for Video Super-Resolution)
 Pytorch implementation of our ACCV 2018 paper ***"Learning for Video Super-Resolution through HR Optical Flow Estimation"*** and TIP 2020 paper ***"Deep Video Super-Resolution using HR Optical Flow Estimation"***.
 
